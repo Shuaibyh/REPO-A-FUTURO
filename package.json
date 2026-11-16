@@ -1,0 +1,13 @@
+{
+  "name": "laboratorio-algoritmos",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Algoritmos didácticos con pruebas en JavaScript",
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
