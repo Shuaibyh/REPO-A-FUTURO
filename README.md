@@ -1,33 +1,73 @@
 # Laboratorio de algoritmos en JavaScript
 
-Ejercicios prácticos de **estructuras de datos y algoritmos**, desarrollados como un laboratorio independiente de aprendizaje. Incluye implementaciones pequeñas, sin dependencias externas, y pruebas de comportamiento.
+Colección educativa de **19 implementaciones** de estructuras de datos y algoritmos, con pruebas automatizadas. Utiliza módulos ESM y las herramientas nativas de Node.js, sin dependencias externas.
 
-## Contenido
+## Catálogo
 
-- Búsqueda binaria en arreglos ordenados.
-- Ordenamiento por inserción.
-- Merge sort.
-- Quicksort.
-- Máximo común divisor y mínimo común múltiplo.
-- Verificación de paréntesis, llaves y corchetes balanceados.
-- Recorrido en anchura (BFS).
-- Recorrido en profundidad (DFS).
+| Área | Implementación | Archivo |
+| --- | --- | --- |
+| Búsqueda | Lineal | `src/linear-search.js` |
+| Búsqueda | Binaria con primera coincidencia | `src/binary-search.js` |
+| Ordenamiento | Inserción estable | `src/insertion-sort.js` |
+| Ordenamiento | Selección | `src/selection-sort.js` |
+| Ordenamiento | Burbuja estable | `src/bubble-sort.js` |
+| Ordenamiento | Merge sort estable | `src/merge-sort.js` |
+| Ordenamiento | Quicksort de tres particiones | `src/quick-sort.js` |
+| Ordenamiento | Counting sort con rango acotado | `src/counting-sort.js` |
+| Matemática | MCD y MCM | `src/number-theory.js` |
+| Matemática | Fibonacci con enteros seguros | `src/fibonacci.js` |
+| Matemática | Criba de Eratóstenes | `src/prime-sieve.js` |
+| Arreglos | Sumas prefijo e intervalos | `src/prefix-sums.js` |
+| Arreglos | Two Sum (pareja de índices) | `src/two-sum.js` |
+| Pilas | Delimitadores balanceados | `src/balanced-brackets.js` |
+| Grafos | Recorrido BFS | `src/breadth-first-search.js` |
+| Grafos | Recorrido DFS iterativo | `src/depth-first-search.js` |
+| Grafos | Ruta más corta sin pesos | `src/graph-shortest-path.js` |
+| Grafos | Orden topológico de Kahn | `src/topological-sort.js` |
+| Conjuntos | Union-Find con compresión de caminos | `src/union-find.js` |
 
-## Requisitos y ejecución
+Cada implementación tiene una prueba correspondiente en `test/*.test.js`. Los módulos documentan sus contratos y limitaciones.
 
-Se necesita Node.js 20 o superior.
+## Requisitos y pruebas
+
+- Node.js 20 o superior (recomendado Node.js 22).
+- No se necesita instalar paquetes de terceros.
 
 ```bash
 npm test
 ```
 
-Los módulos usan ESM, los tests usan `node:test` y `node:assert/strict`, y no hay dependencias de terceros.
+El comando ejecuta `node --test`, usando el runner y las aserciones nativas de Node.js.
 
-## Convenciones
+## Ejemplo rápido
 
-- Las funciones no modifican los arreglos de entrada, salvo que se documente lo contrario.
-- Se prueban casos normales, vacíos, duplicados y datos inválidos.
-- Los recorridos de grafos mantienen el orden de vecinos suministrado.
-- Cada algoritmo es didáctico: las implementaciones priorizan claridad y pruebas sobre microoptimizaciones.
+```js
+import { fibonacci } from "./src/fibonacci.js";
+import { twoSum } from "./src/two-sum.js";
+import { shortestPathUnweighted } from "./src/graph-shortest-path.js";
 
-Este repositorio es material de práctica, **no** código desplegado en producción ni una parte de AULIGMA.
+console.log(fibonacci(10)); // 55
+console.log(twoSum([2, 7, 11, 15], 9)); // [0, 1]
+
+const graph = new Map([
+  ["A", ["B", "C"]],
+  ["B", ["D"]],
+  ["C", []],
+  ["D", []],
+]);
+console.log(shortestPathUnweighted(graph, "A", "D")); // ["A", "B", "D"]
+```
+
+## Calidad automatizada
+
+El flujo [Node.js tests](.github/workflows/node-tests.yml) ejecuta las pruebas con Node.js 22 en cada push y pull request. Un resultado fallido requiere corrección antes de considerar validado el cambio.
+
+## Criterios de mantenimiento
+
+- Evitar commits vacíos y cambios hechos solo para inflar métricas.
+- Priorizar algoritmos comprensibles con comportamiento verificable.
+- Evitar mutar entradas cuando se promete una función pura.
+- Probar casos normales, vacíos, duplicados y entradas inválidas.
+- Conservar límites numéricos y de memoria explícitos.
+
+**Alcance:** laboratorio educativo independiente, no un sistema universitario oficial ni código desplegado en producción. No forma parte de AULIGMA.
