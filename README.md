@@ -1,6 +1,6 @@
 # Laboratorio de algoritmos en JavaScript
 
-Colección educativa de **19 implementaciones** de estructuras de datos y algoritmos, con pruebas automatizadas. Utiliza módulos ESM y las herramientas nativas de Node.js, sin dependencias externas.
+Colección educativa de **28 implementaciones** de estructuras de datos y algoritmos, con pruebas automatizadas. Utiliza módulos ESM y las herramientas nativas de Node.js, sin dependencias externas.
 
 ## Catálogo
 
@@ -25,6 +25,16 @@ Colección educativa de **19 implementaciones** de estructuras de datos y algori
 | Grafos | Ruta más corta sin pesos | `src/graph-shortest-path.js` |
 | Grafos | Orden topológico de Kahn | `src/topological-sort.js` |
 | Conjuntos | Union-Find con compresión de caminos | `src/union-find.js` |
+
+| Búsqueda | Límite inferior (primera posición >= objetivo) | `src/lower-bound.js` |
+| Búsqueda | Límite superior (primera posición > objetivo) | `src/upper-bound.js` |
+| Ordenamiento | Fusión estable de arreglos ordenados | `src/merge-sorted-arrays.js` |
+| Arreglos | Rotación sin mutación | `src/rotate-array.js` |
+| Arreglos | Suma máxima contigua (Kadane) | `src/max-subarray-sum.js` |
+| Arreglos | Ventana fija de suma máxima | `src/fixed-window-max-sum.js` |
+| Cadenas | Anagramas con normalización Unicode | `src/are-anagrams.js` |
+| Cadenas | Palíndromos exactos Unicode | `src/is-palindrome.js` |
+| Cadenas | Subcadena más larga sin repetidos | `src/longest-unique-substring.js` |
 
 Cada implementación tiene una prueba correspondiente en `test/*.test.js`. Los módulos documentan sus contratos y limitaciones.
 
